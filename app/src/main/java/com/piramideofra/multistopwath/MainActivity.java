@@ -60,22 +60,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } else if (isRunning) {
                     isRunning = false;
                     buttonStartStop.setImageDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_play));
+                }
+
+                break;
+            case R.id.cirkle_imageButton:
+
+                if (!isRunning) {
                     seconds = 0;
                     if (linearLayout.getChildCount() > 0) {
                         linearLayout.removeAllViews();
 
                     }
-                }
 
-                break;
-            case R.id.cirkle_imageButton:
-                if (isRunning) {
+                } else if (isRunning) {
                     TextView textView = new TextView(this);
                     setTime(textView);
                     textView.setTextColor(getResources().getColor(R.color.ColorWhite));
                     linearLayout.addView(textView);
-
                 }
+
                 break;
         }
     }
