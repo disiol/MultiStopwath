@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (isRunning) {
                     TextView textView = new TextView(this);
                     setTime(textView);
+                    textView.setTextColor(getResources().getColor(R.color.ColorWhite));
                     linearLayout.addView(textView);
 
                 }
@@ -94,13 +95,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    private void setTime(TextView textViewShowTime) {
+    private void setTime(TextView textView) {
         int hours = seconds / 3600;
         int minutes = (seconds % 3600) / 60;
         int secs = seconds % 60;
 
         String time = String.format(Locale.getDefault(), "%d:%02d:%02d", hours, minutes, secs);
 
-        textViewShowTime.setText(time);
+        textView.setText(time);
     }
 }
